@@ -24,14 +24,14 @@ const ts = require('gulp-typescript');
 
 const pkg = require('./package.json');
 var date = new Date();
-pkg.date = date.getFullYear() + '-' + ('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-    ('00' + date.getDate()).slice(-2) + ' ' + ('00' + date.getHours()).slice(-2) + ':' +
+pkg.date = ('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+    ('00' + date.getDate()).slice(-2) + '-' + date.getFullYear() + '  ' + ('00' + date.getHours()).slice(-2) + ':' +
     ('00' + date.getMinutes()).slice(-2) + ':' + ('00' + date.getSeconds()).slice(-2);
 var timestamp = ['\n/*',
     ' <%= pkg.name %>',
     ' @version v<%= pkg.version %>',
     ' @date <%= pkg.date %>',
-    ' */'].join('');
+    ' */','\n\n/**AUTHOR:Lam**/\n/**EMAIL:1422015387@QQ.COM**/\n/**OR whatisurname7@GMAIL.COM**/'].join('');
 
 // Config
 var toggle = {
